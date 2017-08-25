@@ -186,5 +186,25 @@
         loadJS('//localhost:35729/livereload.js');
       }
     </script>
+
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/jquery.inactivityTimeout.min.js"></script>
+
+    <script type="text/javascript">
+    // redirect after time has passed
+
+    $(document).inactivityTimeout({
+        inactivityWait: 1,
+        dialogWait: 3,
+    		dialogBorderColor : '#FFFFFF',
+    		dialogBackgroundColor: '#2d2c2c',
+    		dialogFontSize : '22px',
+        logoutUrl: '../../',
+    		dialogMessage : 'Redirecting due to inactivity in %s seconds ',
+    })
+
+    </script>
+
   </body>
 </html>
