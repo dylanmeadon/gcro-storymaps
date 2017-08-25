@@ -323,3 +323,7 @@ iframe {
 	padding: 27px!important;
 	font-family: 'Sentinel-Light'!important;
 }
+
+video {
+	z-index: 1000;
+}
