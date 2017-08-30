@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   $(function(){
     x = $.webScreenSaver({
-      stagnantDelay: 3000,
+      stagnantDelay: 60000,
       videos: [{
         mp4: './video/screensaver.mp4'
       }]
