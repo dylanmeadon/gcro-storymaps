@@ -228,11 +228,16 @@
             $(this).scroll(function (e) {
                 idleTime = 0;
             });
+
+            $(document).on('touchstart click', this, function(e){
+                e.stopPropagation(); //stops 'ghost clicks' (double clicking)
+                idleTime = 0;
+              });
         });
 
         function timerIncrement() {
             idleTime = idleTime + 1;
-            if (idleTime > 2) { // 20 minutes
+            if (idleTime > 2) { // 2 minutes
                 window.location.href="../../"
             }
         }
