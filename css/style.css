@@ -73,16 +73,6 @@ body {
   user-select: none;          /* Likely future */
 }
 
-#bgvid {
-	visibility: hidden;
-	z-index: 100000;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-
 .ko-m {
   font-family: 'SeoulNamsan M';
 }
