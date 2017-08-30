@@ -57,7 +57,7 @@
         }
       };
       if ("body" === t.target.prop("tagName").toLowerCase()) t.$ = o("<video></video>", {
-        style: "width: 100%;height: 100%;position: fixed;top: 50%;left: 50%;transform: translate3d(-50%,-50%,0);opacity:0;",
+        style: "width: 100%;height: 100%;position: absolute; opacity:0;",
         "class": "vidcon",
         autoplay: "autoplay"
       });
@@ -65,7 +65,7 @@
         var n = t.target.outerWidth() >= t.target.outerHeight() ? "100%" : "auto",
           i = "100%" === n ? "100%" : "auto";
         t.$ = o("<video></video>", {
-          style: "width: " + i + ";height: " + n + ";position: absolute;top: 50%;left: 50%;transform: translate3d(-50%,-50%,0);opacity:0;",
+          style: "width: " + i + ";height: " + n + ";position: absolute; opacity:0;",
           "class": "vidcon",
           autoplay: "autoplay"
         })
@@ -83,15 +83,21 @@
     },
     v = function() {
       d = !0, f().then(function(t) {
+        console.log('video started');
         var e = 1e3 * (t.$[0].duration - t.$[0].currentTime),
           n = e < a.interval ? e : a.interval;
         n -= 5e3, setTimeout(function() {
           d && v()
         }, n)
+        $('#vid-overlay').css('visibility', 'visible');
       })
     },
     h = function() {
-      d = !1, s && (s.$.remove(), s = null)
+      console.log('removed');
+      d = !1, s && (s.$.remove(), s = null);
+      setTimeout(function(){
+        $('#vid-overlay').css('visibility', 'hidden');
+      }, 0.3);
     },
     g = function() {
       u = setTimeout(function() {
