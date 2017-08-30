@@ -59,7 +59,8 @@
       if ("body" === t.target.prop("tagName").toLowerCase()) t.$ = o("<video></video>", {
         style: "width: 100%;height: 100%;position: absolute; opacity:0;",
         "class": "vidcon",
-        autoplay: "autoplay"
+        autoplay: "autoplay",
+        loop: "loop"
       });
       else {
         var n = t.target.outerWidth() >= t.target.outerHeight() ? "100%" : "auto",
@@ -67,7 +68,8 @@
         t.$ = o("<video></video>", {
           style: "width: " + i + ";height: " + n + ";position: absolute; opacity:0;",
           "class": "vidcon",
-          autoplay: "autoplay"
+          autoplay: "autoplay",
+          loop: "loop"
         })
       }
       return t
