@@ -205,6 +205,12 @@
             $(this).scroll(function (e) {
                 idleTime = 0;
             });
+
+            $(document).on('touchstart click', this, function(e){
+             e.stopPropagation(); //stops 'ghost clicks' (double clicking)
+             idleTime = 0;
+           });
+           
         });
 
         function timerIncrement() {
